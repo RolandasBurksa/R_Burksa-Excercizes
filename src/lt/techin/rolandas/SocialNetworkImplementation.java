@@ -58,10 +58,9 @@ public class SocialNetworkImplementation implements SocialNetwork {
 
     return Collections.sort(friends,new OrderedFriendsComparator());
 
-//        return friends.stream()
-//                .sorted(Comparator.comparing(friend -> friend.getCity()).thenComparing((Comparator.comparing(friend -> friend.getLastName()))
-//                .sorted(Comparator.comparing(friend -> friend.getFirstName()))
-//                .collect(Collectors.toList());
+        return friends.stream()
+                .sorted(Comparator.comparing(friend -> friend.getCity()).thenComparing((Comparator.comparing(friend -> friend.getLastName()).thenComparing(Comparator.comparing(friend -> friend.getFirstName()))
+                .collect(Collectors.toList());
     }
 }
 
